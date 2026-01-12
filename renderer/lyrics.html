@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      background: transparent;
+      font-family: 'PingFang SC', sans-serif;
+      -webkit-user-select: none;
+      -webkit-app-region: drag;
+      overflow: hidden;
+    }
+    #lyrics-box {
+      height: 100px;
+      overflow: hidden;
+      text-align: center;
+      color: white;
+    }
+    .scroll-container {
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.4s ease;
+    }
+    .line {
+      height: 50px;
+      line-height: 50px;
+      font-size: 30px;
+      color: rgba(255, 255, 255, 0.5);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div id="lyrics-box">
+    <div class="scroll-container" id="scroll-container"></div>
+  </div>
+  <script src="lyrics.js"></script>
+</body>
+</html>

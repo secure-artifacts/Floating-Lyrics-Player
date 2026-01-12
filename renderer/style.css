@@ -1,0 +1,256 @@
+:root {
+  --primary-color: #0089f3;
+  --white-color: #ffffff;
+  --text-color-dark: #2c3e50;
+  --text-color-light: #7f8c8d;
+  --background-glass: rgba(255, 255, 255, 0.55);
+  --background-glass-light: rgba(255, 255, 255, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(255, 255, 255, 0.25);
+  --border-radius-lg: 24px;
+  --border-radius-md: 12px;
+  --transition-speed: 0.3s;
+}
+body[data-theme='amber'] {
+  --primary-color: #ffb300;
+}
+body[data-theme='cyan-blue'] {
+  --primary-color: #00acc1;
+}
+body[data-theme='raspberry-pink'] {
+  --primary-color: #d81b60;
+}
+body[data-theme='lime'] {
+  --primary-color: #7cb342;
+}
+body[data-theme='tomato-red'] {
+  --primary-color: #ff5454;
+}
+body[data-theme='dark-teal-gray'] {
+  --primary-color: #4c5455;
+}
+body[data-theme='hot-pink'] {
+  --primary-color: #ff56b2;
+}
+body {
+  font-family: 'Noto Sans SC', sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-dark);
+  overflow: hidden;
+  background: linear-gradient(135deg, #a1c4fd 0, #c2e9fb 100%);
+  background-attachment: fixed;
+}
+.player-container {
+  width: 480px;
+  max-height: 95vh;
+  padding: 24px;
+  border-radius: var(--border-radius-lg);
+  background: var(--background-glass);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-sizing: border-box;
+}
+#download {
+  display: flex;
+  gap: 10px;
+}
+#url-input {
+  flex-grow: 1;
+  border: 1px solid var(--border-color);
+  background: var(--background-glass-light);
+  border-radius: var(--border-radius-md);
+  padding: 10px 15px;
+  font-size: 16px;
+  color: var(--text-color-dark);
+  outline: 0;
+  transition: all var(--transition-speed) ease;
+}
+#url-input::placeholder {
+  color: var(--text-color-light);
+}
+#url-input:focus {
+  border-color: var(--primary-color);
+  background: var(--white-color);
+}
+#download-btn {
+  border: none;
+  background: var(--primary-color);
+  color: var(--white-color);
+  padding: 0 20px;
+  border-radius: var(--border-radius-md);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+#download-btn:hover {
+  filter: brightness(1.1);
+}
+#song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  height: 315px;
+  overflow-y: auto;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: var(--background-glass-light);
+}
+#song-list::-webkit-scrollbar {
+  width: 6px;
+}
+#song-list::-webkit-scrollbar-track {
+  background: 0 0;
+}
+#song-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+#song-list li {
+  padding: 12px 15px 12px 35px;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+  font-size: 16px;
+  position: relative;
+}
+#song-list li:last-child {
+  border-bottom: none;
+}
+#song-list li:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+#song-list li.playing {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-weight: 500;
+}
+#song-list li.playing::before {
+  content: '\f001';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+}
+#progress {
+  width: 100%;
+}
+#time-display {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-color-light);
+  margin-top: 8px;
+  padding: 0 5px;
+}
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+#controls button {
+  background: 0 0;
+  border: none;
+  color: var(--text-color-dark);
+  font-size: 18px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transition-speed) ease;
+}
+#controls button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+#play-btn {
+  background: var(--primary-color);
+  color: var(--white-color);
+  font-size: 24px;
+  width: 65px;
+  height: 65px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+#play-btn:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  background: var(--primary-color);
+}
+.volume-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-color-light);
+}
+#theme-selector i,
+.volume-container .fa-volume-high,
+.volume-container .fa-volume-low {
+  font-size: 16px;
+}
+#theme-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  color: var(--text-color-light);
+}
+#theme-select {
+  -webkit-appearance: none;
+  appearance: none;
+  flex-grow: 1;
+  background-color: var(--background-glass-light);
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237f8c8d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 8px 15px;
+  font-size: 16px;
+  color: var(--text-color-dark);
+  cursor: pointer;
+  outline: 0;
+}
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  outline: 0;
+  cursor: pointer;
+  transition: background var(--transition-speed) ease;
+}
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: var(--white-color);
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-speed) ease, border-color var(--transition-speed) ease;
+}
+input[type='range']:hover::-webkit-slider-thumb {
+  transform: scale(1.2);
+}

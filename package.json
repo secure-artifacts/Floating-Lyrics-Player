@@ -1,0 +1,44 @@
+{
+  "name": "floating-lyrics-player",
+  "version": "1.0.0",
+  "description": "一个悬浮歌词的音乐播放器。",
+  "author": "Raz1ner",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac --win --arm64 --x64"
+  },
+  "build": {
+    "appId": "com.Raz1ner.FloatingLyricsPlayer",
+    "productName": "悬浮歌词播放器",
+    "files": [
+      "**/*",
+      "!dist"
+    ],
+    "mac": {
+      "target": "dmg",
+      "icon": "build/icon.icns",
+      "category": "public.app-category.music"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "zip"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.10.0",
+    "chardet": "^2.1.0",
+    "iconv-lite": "^0.6.3"
+  }
+}

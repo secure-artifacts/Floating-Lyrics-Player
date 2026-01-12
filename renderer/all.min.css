@@ -1,0 +1,77 @@
+/*!
+ * Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com
+ * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
+ * Copyright 2024 Fonticons, Inc.
+ */
+
+.fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: var(--fa-display, inline-block);
+    font-style: normal;
+    font-variant: normal;
+    line-height: 1;
+    text-rendering: auto
+}
+
+.fas {
+    font-family: "Font Awesome 6 Free"
+}
+
+.fa-forward-step:before {
+    content: "\f051"
+}
+
+.fa-volume-low:before {
+    content: "\f027"
+}
+
+.fa-repeat:before {
+    content: "\f363"
+}
+
+.fa-folder-open:before {
+    content: "\f07c"
+}
+
+.fa-palette:before {
+    content: "\f53f"
+}
+
+.fa-pause:before {
+    content: "\f04c"
+}
+
+.fa-infinity:before {
+    content: "\f534"
+}
+
+.fa-random:before {
+    content: "\f074"
+}
+
+.fa-volume-high:before {
+    content: "\f028"
+}
+
+.fa-backward-step:before {
+    content: "\f048"
+}
+
+.fa-play:before {
+    content: "\f04b"
+}
+
+
+@font-face {
+    font-family: "Font Awesome 6 Free";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(./fa-solid-900.ttf) format("truetype")
+}
+
+.fas {
+    font-weight: 900
+}
+
