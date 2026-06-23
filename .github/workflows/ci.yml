@@ -21,4 +21,4 @@ jobs:
 
       - run: npx electron-rebuild
 
-      - run: npm run build
+      - run: npm run dist
