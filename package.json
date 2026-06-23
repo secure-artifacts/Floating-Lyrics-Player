@@ -37,7 +37,8 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    }
+    },
+    "publish": null
   },
   "devDependencies": {
     "electron": "^28.0.0",
