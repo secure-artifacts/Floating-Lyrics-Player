@@ -6,7 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "dist": "electron-builder --mac --win --arm64 --x64"
+    "dist": "electron-builder"
   },
   "build": {
     "appId": "com.Raz1ner.FloatingLyricsPlayer",
@@ -16,7 +16,14 @@
       "!dist"
     ],
     "mac": {
-      "target": "dmg",
+      "target": [
+        {
+          "target": "zip",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
       "icon": "build/icon.icns",
       "category": "public.app-category.music"
     },
